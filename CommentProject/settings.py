@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,18 +76,18 @@ WSGI_APPLICATION = 'CommentProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+load_dotenv()
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'comments',       
-        'USER': 'partac',            
-        'PASSWORD': 'password',     
-        'HOST': 'localhost',              
-        'PORT': '5432',            
+        'NAME': os.getenv('POSTGRES_DB', 'comments'),  # Имя базы данных
+        'USER': os.getenv('POSTGRES_USER', 'partac'),  # Имя пользователя
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'password'),  # Пароль
+        'HOST': os.getenv('POSTGRES_HOST', 'db'),  # Хост
+        'PORT': os.getenv('POSTGRES_PORT', '5432'),  # Порт
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
