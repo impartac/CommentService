@@ -1,0 +1,72 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$...",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "user1",
+            "email": "user1@example.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-10-01T12:00:00Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$...",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "user2",
+            "email": "user2@example.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-10-01T12:00:00Z"
+        }
+    },
+    {
+        "model": "comments.post",
+        "pk": "a1b2c3d4-1234-5678-9101-112131415161",
+        "fields": {
+            "title": "First Post",
+            "content": "This is the first post.",
+            "author": 1,
+            "created_at": "2023-10-01T12:00:00Z",
+            "updated_at": "2023-10-01T12:00:00Z"
+        }
+    },
+    {
+        "model": "comments.post",
+        "pk": "b2c3d4e5-2345-6789-1011-121314151617",
+        "fields": {
+            "title": "Second Post",
+            "content": "This is the second post.",
+            "author": 2,
+            "created_at": "2023-10-01T12:05:00Z",
+            "updated_at": "2023-10-01T12:05:00Z"
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": "c3d4e5f6-3456-7891-0111-213141516171",
+        "fields": {
+            "content": "Great first post!",
+            "author": 2,
+            "post": "a1b2c3d4-1234-5678-9101-112131415161",
+            "created_at": "2023-10-01T12:10:00Z"
+        }
+    },
+    {
+        "model": "comments.comment",
+        "pk": "d4e5f6a7-4567-8910-1112-131415161718",
+        "fields": {
+            "content": "Nice second post!",
+            "author": 1,
+            "post": "b2c3d4e5-2345-6789-1011-121314151617",
+            "created_at": "2023-10-01T12:15:00Z"
+        }
+    }
+]
