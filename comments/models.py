@@ -42,3 +42,4 @@ class Like(models.Model):
 
     def __str__(self):
         return f"Like by {self.author} on {self.post.title}"
+    
